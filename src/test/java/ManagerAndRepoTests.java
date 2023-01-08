@@ -118,7 +118,16 @@ public class ManagerAndRepoTests {
         Assertions.assertArrayEquals(expected, actual);
     }
 
-//    @Test
-//    public void smartphoneShouldReturnFalse() {}
+    @Test
+    public void productShouldReturnTrue1() {
+        repo.add(item1);
+        repo.add(item2);
+        repo.add(item3);
+        repo.add(item4);
 
+        boolean expected = true;
+        boolean actual = product.matches("Смартфон 1");
+
+        Assertions.assertEquals(expected, actual);
+    }
 }

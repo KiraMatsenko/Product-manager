@@ -1,7 +1,5 @@
 package ru.netology.product.product_manager.product_item;
 
-import ru.netology.product.product_manager.product_repo.ProductRepository;
-
 public class Product {
 
     protected int id;
@@ -42,6 +40,7 @@ public class Product {
     }
 
     public boolean matches(String search) {
+        // ???
         if (getName().contains(search)) {
             return true;
         } else {
