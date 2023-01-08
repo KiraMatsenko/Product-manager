@@ -1,13 +1,14 @@
 package ru.netology.product.product_manager.product_item;
 
+import ru.netology.product.product_manager.product_repo.ProductRepository;
+
 public class Product {
 
     protected int id;
     protected String name;
     protected int price;
 
-    public Product(){
-
+    public Product() {
     }
 
     public Product(int id, String name, int price) {
@@ -38,5 +39,13 @@ public class Product {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public boolean matches(String search) {
+        if (getName().contains(search)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

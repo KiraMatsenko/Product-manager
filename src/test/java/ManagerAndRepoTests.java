@@ -4,16 +4,15 @@ import ru.netology.product.product_manager.product_repo.ProductRepository;
 import ru.netology.product.product_manager.product_item.Product;
 import ru.netology.product.product_manager.service.ProductManager;
 
-import java.util.Arrays;
-
 public class ManagerAndRepoTests {
 
     ProductRepository repo = new ProductRepository();
     Product item = new Product();
     ProductManager manager = new ProductManager(repo);
+    Product product = new Product();
 
     Product item1 = new Book(1, "Книга 1", 100, "Автор 1");
-    Product item2 = new Book(2, "КНига 2", 200, "Автор 2");
+    Product item2 = new Book(2, "Книга 2", 200, "Автор 2");
     Product item3 = new Smartphone(3, "Смартфон 1", 1000, "Бренд 1");
     Product item4 = new Smartphone(4, "Смартфон 2", 2000, "Бренд 2");
 
@@ -67,22 +66,6 @@ public class ManagerAndRepoTests {
         Assertions.assertArrayEquals(expected, actual);
     }
 
-    @Test
-    public void managerShouldMatch() {
-
-        boolean expected = true;
-        boolean actual = manager.matches(item1, "Книга");
-
-        Assertions.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void managerShouldNotMatch() {
-        boolean expected = false;
-        boolean actual = manager.matches(item3, "Книга");
-
-        Assertions.assertEquals(expected, actual);
-    }
 
     @Test
     public void managerShouldSearchById() {
@@ -96,4 +79,46 @@ public class ManagerAndRepoTests {
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void productShouldReturnTrue() {
+        repo.add(item1);
+        repo.add(item2);
+        repo.add(item3);
+        repo.add(item4);
+
+        Product[] expected = {item3};
+        Product[] actual = manager.searchByText("Смартфон 1");
+    }
+
+    @Test
+    public void productShouldReturnFalse() {}
+
+    @Test
+    public void smartphoneShouldReturnTrue() {
+        Smartphone smartphone = new Smartphone();
+        smartphone.setName("Смартфон 1");
+        smartphone.setBrand("Бренд 1");
+        boolean expected = true;
+        boolean actual = smartphone.matches("Бренд 1");
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void managerShouldSearchByText() {
+        repo.add(item1);
+        repo.add(item2);
+        repo.add(item3);
+        repo.add(item4);
+
+        Product[] expected = {item3};
+        Product[] actual = manager.searchByText("Бренд 1");
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+//    @Test
+//    public void smartphoneShouldReturnFalse() {}
+
 }
