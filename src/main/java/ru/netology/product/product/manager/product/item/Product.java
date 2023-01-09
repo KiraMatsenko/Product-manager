@@ -1,4 +1,4 @@
-package ru.netology.product.product_manager.product_item;
+package ru.netology.product.product.manager.product.item;
 
 public class Product {
 

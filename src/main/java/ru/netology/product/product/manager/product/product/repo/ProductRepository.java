@@ -1,6 +1,6 @@
-package ru.netology.product.product_manager.product_repo;
+package ru.netology.product.product.manager.product.product.repo;
 
-import ru.netology.product.product_manager.product_item.Product;
+import ru.netology.product.product.manager.product.item.Product;
 
 public class ProductRepository {
 

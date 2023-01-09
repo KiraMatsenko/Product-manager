@@ -1,8 +1,10 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import ru.netology.product.product_manager.product_repo.ProductRepository;
-import ru.netology.product.product_manager.product_item.Product;
-import ru.netology.product.product_manager.service.ProductManager;
+import ru.netology.product.product.manager.product.item.Book;
+import ru.netology.product.product.manager.product.item.Smartphone;
+import ru.netology.product.product.manager.product.item.Product;
+import ru.netology.product.product.manager.product.product.repo.ProductRepository;
+import ru.netology.product.product.manager.service.ProductManager;
 
 public class ManagerAndRepoTests {
 

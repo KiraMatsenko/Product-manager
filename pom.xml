@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ru.netology.product</groupId>
-    <artifactId>product_manager</artifactId>
+    <artifactId>product.manager</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>

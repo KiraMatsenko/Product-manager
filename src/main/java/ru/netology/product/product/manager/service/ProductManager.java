@@ -1,7 +1,7 @@
-package ru.netology.product.product_manager.service;
+package ru.netology.product.product.manager.service;
 
-import ru.netology.product.product_manager.product_item.Product;
-import ru.netology.product.product_manager.product_repo.ProductRepository;
+import ru.netology.product.product.manager.product.item.Product;
+import ru.netology.product.product.manager.product.product.repo.ProductRepository;
 
 public class ProductManager {
 
