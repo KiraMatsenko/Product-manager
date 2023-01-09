@@ -1,7 +1,7 @@
-package ru.netology.product.product_manager.service;
+package ru.netology.product.product.manager.service;
 
-import ru.netology.product.product_manager.product_item.Product;
-import ru.netology.product.product_manager.product_repo.ProductRepository;
+import ru.netology.product.product.manager.product.item.Product;
+import ru.netology.product.product.manager.product.repo.ProductRepository;
 
 public class ProductManager {
 
@@ -18,7 +18,7 @@ public class ProductManager {
 
     public Product[] searchByText(String text) {
         Product[] result = new Product[0];
-        for (Product item: repo.getItems()) {
+        for (Product item : repo.getItems()) {
             if (matches(item, text)) {
                 Product[] tmp = new Product[result.length + 1];
                 tmp[result.length] = item;

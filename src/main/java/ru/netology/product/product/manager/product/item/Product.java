@@ -1,4 +1,4 @@
-package ru.netology.product.product_manager.product_item;
+package ru.netology.product.product.manager.product.item;
 
 public class Product {
 
@@ -6,7 +6,7 @@ public class Product {
     protected String name;
     protected int price;
 
-    public Product(){
+    public Product() {
 
     }
 

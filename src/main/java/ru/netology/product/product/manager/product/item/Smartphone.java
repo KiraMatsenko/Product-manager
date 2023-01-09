@@ -1,4 +1,4 @@
-import ru.netology.product.product_manager.product_item.Product;
+package ru.netology.product.product.manager.product.item;
 
 public class Smartphone extends Product {
 
