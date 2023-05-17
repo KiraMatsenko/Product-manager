@@ -96,4 +96,30 @@ public class ManagerAndRepoTests {
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void managerShouldFindVariousById() {
+        repo.add(item1);
+        repo.add(item2);
+        repo.add(item3);
+        repo.add(item4);
+
+        Product[] expected = {item1, item2};
+        Product[] actual = manager.searchByText("Книга");
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void managerShouldNotSearchAny() {
+        repo.add(item1);
+        repo.add(item2);
+        repo.add(item3);
+        repo.add(item4);
+
+        Product[] expected = {};
+        Product[] actual = manager.searchByText("Планшет");
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
 }
